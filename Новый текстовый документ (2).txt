@@ -1,0 +1,257 @@
+public class Main {
+    public static void main(String[] args) {
+        MathQuiz mathQuiz = new MathQuiz();
+        mathQuiz.start();
+    }
+}
+
+public class UserAnswer {
+    public String name ="";
+
+}
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class MathQuiz {
+    Random random = new Random();
+    Scanner scanner = new Scanner(System.in);
+
+    UserAnswer[] userAnswers = new UserAnswer[3];
+    String[] names = {"Sasha", "Natasha", "Rudolf"};
+    int correctAnswer = 1;
+    int score = 0;
+
+    int number1 = random.nextInt(20) + 1;
+    int number2 = random.nextInt(10) + 1;
+
+    public static int add(int number1, int number2) {
+        return number1 + number2;
+    }
+
+    public static int subtract(int number1, int number2) {
+        return number1 - number2;
+    }
+
+    public static int multiply(int number1, int number2) {
+        return number1 * number2;
+    }
+
+    public static int division(int number1, int number2) {
+        return number1 / number2;
+    }
+
+    public void start() {
+        for (int counter = 0; counter < userAnswers.length; counter++) {
+            int randomNumber = random.nextInt(3);
+            userAnswers[counter] = new UserAnswer();
+            userAnswers[counter].name = names[randomNumber];
+        }
+        for (UserAnswer userAnswer : userAnswers) {
+            String userAnswerName = userAnswer.name;
+            System.out.println("Имя игрока:" + userAnswerName);
+            correctAnswer = add(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "+" + number2 + ":");
+            int userAnswers = scanner.nextInt();
+
+            if (userAnswers == add(number1, number2)) {
+                System.out.println("Правильно !");
+                score = score + 5;
+            }
+
+            if (userAnswers !=  add(number1, number2)) {
+                System.out.println("Неправильно !");
+                score = score - 5;
+            }
+
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+        }
+
+        for (int counter = 0; counter < userAnswers.length; counter++) {
+            int randomNumber = random.nextInt(3);
+            userAnswers[counter] = new UserAnswer();
+            userAnswers[counter].name = names[randomNumber];
+        }
+        for (UserAnswer userAnswer : userAnswers) {
+            String userAnswerName = userAnswer.name;
+            System.out.println("Имя игрока:" + userAnswerName);
+            correctAnswer = subtract(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "-" + number2 + ":");
+            int userAnswers = scanner.nextInt();
+
+            if (userAnswers == subtract(number1, number2)) {
+                System.out.println("Правильно !");
+                score = score + 5;
+            }
+
+            if (userAnswers !=  subtract(number1, number2)) {
+                System.out.println("Неправильно !");
+                score = score - 5;
+            }
+
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+
+        }
+
+        for (int counter = 0; counter < userAnswers.length; counter++) {
+            int randomNumber = random.nextInt(3);
+            userAnswers[counter] = new UserAnswer();
+            userAnswers[counter].name = names[randomNumber];
+        }
+
+        for (UserAnswer userAnswer : userAnswers) {
+            String userAnswerName = userAnswer.name;
+            System.out.println("Имя игрока:" + userAnswerName);
+            correctAnswer = multiply(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "*" + number2 + ":");
+            int userAnswers = scanner.nextInt();
+
+            if (userAnswers == multiply(number1, number2)) {
+                System.out.println("Правильно !");
+                score = score + 5;
+            }
+
+            if (userAnswers !=  multiply(number1, number2)) {
+                System.out.println("Неправильно !");
+                score = score - 5;
+            }
+
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+
+        }
+
+        for (int counter = 0; counter < userAnswers.length; counter++) {
+            int randomNumber = random.nextInt(3);
+            userAnswers[counter] = new UserAnswer();
+            userAnswers[counter].name = names[randomNumber];
+        }
+        for (UserAnswer userAnswer : userAnswers) {
+            String userAnswerName = userAnswer.name;
+            System.out.println("Имя игрока:" + userAnswerName);
+            correctAnswer = division(number1, number2);
+            System.out.println("Введите свой ответ:" + number1 + "/" + number2 + ":");
+            int userAnswers = scanner.nextInt();
+
+            if (userAnswers == division(number1, number2)) {
+                System.out.println("Правильно !");
+                score = score + 5;
+            }
+
+            if (userAnswers !=  division(number1, number2)) {
+                System.out.println("Неправильно !");
+                score = score - 5;
+            }
+
+            System.out.println("Правильный ответ: " + correctAnswer);
+            System.out.println("Текущий счёт: " + score);
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println("Опросник завершён!");
+        System.out.println("Ваш финальный счёт:" + names.length + ":" + score );
+        System.out.println();
+    }
+
+}
+
+"C:\Program Files\Java\jdk-20\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.3\lib\idea_rt.jar=57825:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\Natalia\Hw_MathQuiz\out\production\Hw_MathQuiz Main
+Имя игрока:Natasha
+Введите свой ответ:14+7:
+11
+Неправильно !
+Правильный ответ: 21
+Текущий счёт: -5
+
+Имя игрока:Natasha
+Введите свой ответ:14+7:
+21
+Правильно !
+Правильный ответ: 21
+Текущий счёт: 0
+
+Имя игрока:Sasha
+Введите свой ответ:14+7:
+21
+Правильно !
+Правильный ответ: 21
+Текущий счёт: 5
+
+Имя игрока:Natasha
+Введите свой ответ:14-7:
+7
+Правильно !
+Правильный ответ: 7
+Текущий счёт: 10
+
+Имя игрока:Natasha
+Введите свой ответ:14-7:
+7
+Правильно !
+Правильный ответ: 7
+Текущий счёт: 15
+
+Имя игрока:Sasha
+Введите свой ответ:14-7:
+5
+Неправильно !
+Правильный ответ: 7
+Текущий счёт: 10
+
+Имя игрока:Rudolf
+Введите свой ответ:14*7:
+63
+Неправильно !
+Правильный ответ: 98
+Текущий счёт: 5
+
+Имя игрока:Sasha
+Введите свой ответ:14*7:
+98
+Правильно !
+Правильный ответ: 98
+Текущий счёт: 10
+
+Имя игрока:Rudolf
+Введите свой ответ:14*7:
+98
+Правильно !
+Правильный ответ: 98
+Текущий счёт: 15
+
+Имя игрока:Natasha
+Введите свой ответ:14/7:
+2
+Правильно !
+Правильный ответ: 2
+Текущий счёт: 20
+
+Имя игрока:Natasha
+Введите свой ответ:14/7:
+2
+Правильно !
+Правильный ответ: 2
+Текущий счёт: 25
+
+Имя игрока:Sasha
+Введите свой ответ:14/7:
+2
+Правильно !
+Правильный ответ: 2
+Текущий счёт: 30
+
+
+Опросник завершён!
+ Ваш финальный счёт:3:30
+
+
+Process finished with exit code 0
+
+
+
+Не получается вывести в конце имя с баллами для каждого игрока, 
